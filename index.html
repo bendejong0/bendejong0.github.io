@@ -1,101 +1,292 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Benjamin DeJong</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben DeJong</title>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fafafa;
+            color: #222;
+        }
 
-				<!-- Header -->
-					<header id="header">
-						<div class="content">
-							<div class="inner">
-								<h1>Benjamin De Jong</h1>
-								<p>(Ben for short)</p>
-								<img src="images\PicOfMeSpace(5).jpg" alt = "Me at the MSI Chicago">
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-							</ul>
-						</nav>
-					</header>
+        header {
+            background: #1d3557;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-				<!-- Main -->
-					<div id="main">
+        header h1 {
+            margin: 0;
+            font-size: 2.6rem;
+        }
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+        header .contact a {
+            color: #a8dadc;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
 
-								<p>I am a Computer Science student at Elmhurst University.</p>
-								<p>I mainly focus on low-level programming in Rust and C++, but I also do high-level data analysis, Machine Learning, and Deep Learning work in Python</p>
-								<p>I mainly use <a href="https://pytorch.org/">Pytorch</a>, <a href="https://scikit-learn.org/stable/index.html">Scikit Learn</a>, <a href="https://pandas.pydata.org/">Pandas</a>, and more.</p>
-								<p><a href="https://github.com/bendejong0">My Github</a> 
-								<br><a href="#work">My work</a></p>
-							</article>
+        nav {
+            background: #457b9d;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+        }
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<p>I enjoy researching machine learning, deep learning, data structures, and all sorts of algorithms.</p>
-								<p>I have:
-									<br><br>Taken robotics classes at <a href="http://www.homeschoolkingdom.org/">Homeschool Kingdom</a> for ~8 years.
-									<br><br>Taken programming and game design courses at Microsoft and <a href="http://www.homeschoolkingdom.org/">Homeschool Kingdom</a> for ~4 years.
-									<br><br>Done work as a backend database manager at <a href="http://www.homeschoolkingdom.org/">Homeschool Kingdom</a>, ensuring their class registration and payment was efficient and easy.
-									</p>
-								<p>Most of my work can be found on either my <a href="https://github.com/bendejong0">Github</a>, or <a href="https://leetcode.com/bendejong0/">Leetcode</a> pages.</p>
-							</article>
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
 
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<p>I'm a Elmhurst University student studying Computer Science.</p>
-								<p>I have experience working with music, customer service (English and Spanish), databases, ecommerce, and more</p>
-								<p>I enjoy studying mathematics, philosophy, literature, music, and visual arts.</p>
-							</article>
+        nav .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-						<!-- Contact -->
-							<article id="contact">
-								<h1 style="text-align: center;">Connect with me</h1>
-							</article>
-								<ul class="icons">
-								<br>
-									<li><a href="https://linkedin.com/in/bendejong123" class="icon brands fa-linkedin"></a></li>
-									<li><a href="https://github.com/bendejong0" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
+        nav .toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
 
-						
+        section {
+            max-width: 950px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-					</div>
+        h2 {
+            color: #1d3557;
+            border-bottom: 2px solid #457b9d40;
+            padding-bottom: 6px;
+        }
 
-				<!-- Footer -->
-					<footer id="footer">
-					</footer>
+        ul {
+            line-height: 1.7;
+        }
 
-			</div>
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
 
-		<!-- BG -->
-			<div id="bg"></div>
+        .job {
+            margin-bottom: 25px;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .project {
+            margin-bottom: 20px;
+        }
 
-	</body>
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 40px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            nav .menu {
+                display: none;
+                flex-direction: column;
+                background: #457b9d;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                padding: 10px 0;
+            }
+
+            nav .menu.show {
+                display: flex;
+            }
+
+            nav .toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Ben DeJong</h1>
+    <body>*Last updated 11/2025</body>
+    <div class="contact">
+        <a href="mailto:bendejong725@gmail.com">Email</a> |
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
+        <a href="https://github.com" target="_blank">GitHub</a>
+    </div>
+    
+    <img src="..\website\picofme.jpg", alt="Receiving my award from Elmhurst University.", style="position:absolute; right:20px;top: 10px; width:250px">
+            
+    </div>
+</header>
+
+<nav>
+    <div class="toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+        <a href="#summary">Summary</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+    </div>
+</nav>
+
+<section id="summary">
+    <h2>Professional Summary</h2>
+    <p>
+        Computer scientist with research experience in AI, machine learning, compression,
+        and high-performance computing. Proficient in mathematics, analysis, computer 
+        science, and programming, with 4 years of experience. Proficient in Spanish. Experienced 
+        in teaching high-level math and CS. Over 5 years of investing experience.
+    </p>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <p><strong>Elmhurst University</strong> — 2021–Present (Anticipated Graduation: May 26, 2026)</p>
+    <ul>
+        <li>B.S. in Computer Science and Mathematics (Double Major)</li>
+        <li>GPA: 3.845/4.00</li>
+        <li>Transfer Excellence Scholarship</li>
+        <li>Honors Program Member</li>
+    </ul>
+</section>
+
+<section id="skills">
+    <h2>Technical Skills</h2>
+
+    <div class="two-column">
+        <div>
+            <h3>Machine Learning</h3>
+            <ul>
+                <li>Deep learning (2 years)</li>
+                <li>Model evaluation (2 years)</li>
+                <li>Data cleaning (2 years)</li>
+                <li>Visualization (3 years)</li>
+                <li>Backtesting (2 years)</li>
+            </ul>
+
+            <h3>Mathematics</h3>
+            <ul>
+                <li>Calculus I–III</li>
+                <li>Probability</li>
+                <li>Mathematical Modeling</li>
+                <li>Real Analysis</li>
+                <li>Differential Equations</li>
+                <li>Discrete Math</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Programming</h3>
+            <ul>
+                <li>NumPy (3 years), Pandas (3 years), SK-Learn (3 years), PyTorch(2 years)</li>
+                <li>BeautifulSoup4 (<1 year)</li>
+                <li>CUDA (<1 year)</li>
+                <li>C++ (4 years)</li>
+                <li>Rust (3 years)</li>
+                <li>Python (4 years)</li>
+            </ul>
+
+            <h3>Languages</h3>
+            <ul>
+                <li>English</li>
+                <li>Spanish</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Work Experience</h2>
+
+    <div class="job">
+        <h3>Tutor – Elmhurst University <span style="float:right">Aug 2025 – Present</span></h3>
+        <ul>
+            <li>Explained calculus, statistics, algebra, and other topics rigorously and intuitively.</li>
+            <li>Managed tutoring schedules and filed reports for 40+ students.</li>
+        </ul>
+    </div>
+
+    <div class="job">
+        <h3>Researcher – Argonne National Lab <span style="float:right">May 2025 – Aug 2025</span></h3>
+        <ul>
+            <li>Utilized HPC supercomputers across 128+ compute nodes.</li>
+            <li>Wrote Python and C++ (CUDA) to measure compression algorithm performance.</li>
+            <li>Collaborated with PhDs under mentorship to conduct efficient research.</li>
+            <li>Presented and defended findings at two poster sessions.</li>
+        </ul>
+    </div>
+
+    <div class="job">
+        <h3>LLM Researcher – Elmhurst University <span style="float:right">May 2024 – Dec 2024</span></h3>
+        <ul>
+            <li>Scraped and cleaned datasets to fine-tune LLMs.</li>
+            <li>Developed safe, robust prompts.</li>
+            <li>Collaborated to deliver accurate and reliable NLP solutions.</li>
+        </ul>
+    </div>
+
+    <div class="job">
+        <h3>Tech Support & Sales – Perry’s Music <span style="float:right">Nov 2018 – May 2025</span></h3>
+        <ul>
+            <li>Assisted thousands of customers and negotiated hundreds of sales in English and Spanish.</li>
+            <li>Solved computer and device issues.</li>
+            <li>Managed 200-item inventory and created online listings.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>Car Price Predictor</h3>
+        <ul>
+            <li>Scraped and processed car pricing data using BeautifulSoup and Pandas.</li>
+            <li>Built predictive models (Decision Trees, PyTorch MLPs).</li>
+            <li>Achieved ~5% valuation accuracy.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <h3>Blackjack Model</h3>
+        <ul>
+            <li>Programmed a full blackjack environment in Python.</li>
+            <li>Used Deep Learning, Deep Q-Learning, and classic algorithms.</li>
+            <li>Achieved a 45% win rate across simulated games.</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    © 2025 Benjamin J. DeJong — All Rights Reserved
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("show");
+    }
+</script>
+
+</body>
 </html>
